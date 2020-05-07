@@ -1,0 +1,15 @@
+ My database:
+
+        CREATE DATABASE login_data;
+
+        \\u login_data
+
+        CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, nickname VARCHAR(255), password BINARY(255));
+
+        ALTER TABLE `login_data`.`users` 
+        COLLATE = utf8mb4_polish_ci ,
+        CHANGE COLUMN `nickname` `nickname` VARCHAR(255) NOT NULL ,
+        CHANGE COLUMN `password` `password` BINARY(255) NOT NULL ,
+        ADD UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+        ADD UNIQUE INDEX `nickname_UNIQUE` (`nickname` ASC) VISIBLE;
+        ;
